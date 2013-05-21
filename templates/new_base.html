@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+
+    <script src="/static/js/jquery-1.6.4.js?{% now "U" %}"></script>
+    {% block header_files %}
+
+    {% endblock %}
+
+    {% comment %}
+    {% endcomment %}
+
+<script type="text/javascript">
+
+    // google analytics logging
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37331371-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    // ecoach logging
+    function log_event(what)
+    {
+        var rand = Math.random(10000000);
+        var ldata = "what=" + what + "&rand=" + rand ;
+        $.ajax({
+          type: "GET",
+          url: {% url "data_log" %},
+          data:  "what=" + what,
+        }).done(function( msg ) {
+            ;
+        });
+    }
+
+</script>
+
+</head>
+
+<title>My Courses</title>
+
+<body>
+
+<!-- Overall Page table -->
+<table id='main_table' border='0' width='100%' style='border-collapse:collapse;'>
+    <tr>
+        <!-- begin header -->
+        <td id='header' align='left'>
+
+<!-- Logo and menu table -->
+<table border='0' style='border-collapse:collapse;'>
+    <tr>
+        <td id='logo_container'>
+            <img src="/static/images/ecoach_logo90x90.png">
+        </td>
+        <td valign='top' align='left' id='menu_options_cell'>
+
+<!-- Double Menu table -->
+<table style="border-collapse: collapse;" border='0'>
+    <tr>
+        <td>&nbsp;</td>
+        <td class='menu_options_split' valign='top'>&gt</td>
+        <td>
+ 
+<!-- First Menu table -->
+{% block first_menu %}
+
+{% endblock %}
+<!-- First Menu table -->
+
+    </tr>
+
+
+
+    <tr>
+        <td>
+
+<!-- Second Menu table -->
+{% block second_menu %}
+
+{% endblock %}
+<!-- Second Menu table -->
+
+        </td>
+        <td class='menu_options_split' valign='top'>&lt</td>
+        <td>&nbsp;</td>
+
+    </tr>
+
+
+
+<!-- Third Menu table -->
+{% block third_menu %}
+
+{% endblock %}
+<!-- Third Menu table -->
+
+
+</table>
+<!-- Double Menu table -->
+
+        </td>
+    </tr>
+</table>
+<!-- Logo and menu table -->
+
+        </td>
+    </tr>
+
+    <!-- begin content -->
+    <tr>
+        <td align='center'>
+<!-- Central content table -->
+<table border='0' style='border-collapse:collapse;' id='content_table'>
+    <tr>
+        <td align='left' valign='top' style='padding: 40px 0px 10px 20px;'>
+            {% block side_menu %}
+            {% endblock %}
+        </td>
+        <td style='padding: 10px 20px 10px 20px;'>
+            {% block content %}
+            {% endblock %}
+        </td>
+    </tr>
+</table>
+<!-- Central content table -->
+
+        </td>
+    </tr>
+    <tr>
+        <!--footer start -->
+        <td class='footout' align='center'>
+
+<!-- Footer outer container table -->
+<table style='border-collapse:collapse;' border='0'>
+    <tr>
+        <td class='myfooter'>
+<div>
+<div>
+    <!-- Footer inner conainer table -->
+    <table style='border-collapse:collapse;' border='0'>    
+        <tr>
+            <td class='left_foot'>
+E<sup>2</sup>Coach is here to help you through your course - using expert advice, advice from your friends, and stats from your class, it tailors to <em>you</em>.
+            </td>
+        </tr>
+    </table>    
+    <!-- Footer inner conainer table -->
+</div>
+</div>
+        </td> 
+    </tr>
+</table>
+<!-- Footer outer container table -->
+
+        </td>
+    </tr>
+</table>
+<!-- Overall Page table -->
+
+</body>		
+<!--body end -->
+
+</html>
+

@@ -1,0 +1,212 @@
+/* Styles and fonts */
+@font-face {
+    font-family: 'Overlock';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Overlock'), local('Overlock-Regular'), url(/static/myselector/fall/css/Pr-80_x4SIOocpxz2VxC5fesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(/static/myselector/fall/css/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+/* Main */
+
+body {
+	margin:0;
+	padding:0;
+	border:0;			/* This removes the border around the viewport in old versions of IE */
+	width:100%;
+	background-color:#FF972B;
+}
+
+div, h1, h2, p, form, label, input, textarea, img, span{
+	margin:0; padding:0;
+}
+
+sup{
+    font-size: 13px
+}
+
+/* Main table */
+
+#main_table {
+	background-color:white;
+    margin: 0px;
+}
+
+/* Header */
+
+#header{
+	background:url(/static/myselector/fall/images/header.png) 0 0 repeat-x;
+	width:100%;	
+	height:100px;
+	margin:0 auto;
+}
+#logo_container{
+	padding:0px 0px 0px 30px;
+}
+#menu_options_cell{
+	padding:0px 0px 0px 100px;
+}
+#user_id_cell{
+	font-size:14px;
+	font-family: 'Overlock', serif;
+	color:#fff;
+	text-decoration:none;
+	background-color:inherit;
+}
+.menu1_option a{
+	font-size:15px;
+	font-family: 'Overlock', serif;
+	color: #B55100;
+	text-decoration:none;
+	background-color:inherit;
+}
+.menu1_option a:hover{
+	font-family: 'Overlock', serif;
+	color:#fff;
+	text-decoration:none;
+	background-color:inherit;
+	font-weight: bold;
+}
+
+#menu_options_split{
+	font-size:28px;
+	font-family: 'Overlock', serif;
+	color:#fff;
+	text-decoration:none;
+	background-color:inherit;
+}
+
+/* Tab menu */
+.current_page_item, .page_item{
+	font-family: 'Overlock', serif;
+	padding: 10px 20px 15px 20px;
+    margin: 10px 20px 0px 20px;           
+	text-transform: uppercase;
+	font-size:18px;
+	font-weight: bold;
+}
+.page_item a{
+	text-decoration: none;
+	color: #B55100;
+}
+.current_page_item a, .page_item a:hover {
+	text-decoration: none;
+    color: white;
+}
+
+
+/* Content */
+
+#content_table{
+    min-width: 100px;
+    text-align: left;
+    width: 100%;
+}
+
+
+/* Footer */
+
+.footout{
+    background-color:#FF972B;           /* orange */
+    padding: 0px;
+}
+.footout div{
+    background-color: white;
+	padding:0px 10px 10px 10px;
+}
+.footout div div{
+    background-color: #166e75;          /* grey/green */
+    max-width: 1000px;
+}
+.myfooter{
+	font:18px sans-serif;
+	font-family: 'Overlock', serif;
+	color: white;
+	padding:0px 15% 1% 15%;
+}
+.left_foot{
+	padding:0% 5% 0% 10%;
+}
+.right_foot{
+	padding:0% 5% 0% 0%;
+}
+.footmenu a{
+	font:16px sans-serif;
+	font-family: 'Overlock', serif;
+	color:#fff;
+	padding:0% 5% 0% 0%;
+	text-decoration:none;
+}
+
+/* Course selector */
+
+#pick_header h2{
+	font:bold 24px/16px;
+	font-family: 'Open Sans', sans-serif;
+	color:#496CA6;
+	padding:0px 0px 0px 40px;
+}
+#courses_table td{
+	padding:20px 0px 20px 0px;
+	border-top: 1px dotted #E7E2DC;
+    border-width: 1px;
+    border-color: black;
+}
+.course_text{
+	padding:0px 0px 0px 20px;
+	font-size:15px;
+	font-family: 'Open Sans', sans-serif;
+}
+.note{
+	padding:0px 50px 0px 20px;
+}
+/* Singe Column - footer menu items */
+
+#singlecolumn {
+	background-color:#fff;
+	width:100%;
+	margin:0 auto;
+	position:relative;
+    text-align: left;
+}
+
+#singlecolumn p {
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	padding:5px;
+	padding-left:80px;
+	padding-right:80px;
+	
+	
+}
+#singlecolumn h2 {
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	padding-top: 30px;
+	padding-left:70px;
+}
+
+#singlecolumn li{
+	font-size:14px;
+	font-family: 'Open Sans', sans-serif;
+	padding-left: 90px;
+}
+
+#singlecolumn img.press{
+	padding-top: 30px;
+	padding-left:70px;
+	display: inline;
+}
+
+#singlecolumn ul {
+	margin:0; 
+	padding:0; 
+	list-style-type:none;
+	font-size:0;
+}
