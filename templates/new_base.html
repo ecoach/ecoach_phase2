@@ -31,23 +31,7 @@
 
     <script type="text/javascript">
 
-    // google analytics logging
-
-    // ecoach logging
-    function log_event(what)
-    {
-        var rand = Math.random(10000000);
-        var ldata = "what=" + what + "&rand=" + rand ;
-        $.ajax({
-          type: "GET",
-          url: '{% url "data_log" %}',
-          data:  "what=" + what,
-        }).done(function( msg ) {
-            ;
-        });
-    }
-
-/*
+    /*
     $(document).ready(function() {
       $(window).resize(function () {
         if ($(window).width() < 768) {
@@ -57,8 +41,7 @@
         }
       });
     });
-
-*/
+    */
     
     $(document).ready(function() {
       $(window).bind("resize load", function () {
