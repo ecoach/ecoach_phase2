@@ -119,7 +119,7 @@
                         <div class="menu1_options clearfix">
 
 
-                    {% if not user.is_staff %} 
+                    {% if user.is_staff %} 
                     <!-- use responsive nav to handle case with more nav items -->
                     <div class="nav-dropdown"> 
                         <div class="btn-group">
