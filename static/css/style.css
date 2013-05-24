@@ -128,7 +128,27 @@ div.logo {
 	color: #fff;
 }
 
+.nav-dropdown {
+	display: none;
+}
+
+.nav-static ul {
+	margin: 0;
+	list-style-type: none;
+}
+.nav-static {
+	margin-top: 45px;
+}
+
 @media (max-width: 767px) {
+	.nav-dropdown {
+		display: block;
+	}
+
+	.nav-static-wide {
+		display: none;
+	}
+
 	.menu1_options .nav-dropdown{
 		margin-top:20px;
 	}
@@ -140,6 +160,16 @@ div.logo {
 	.nav-dropdown .menu1_option {
 		float: none;
 		margin-left: 0;
+	}
+
+	.nav-static .menu1_option {
+		float: none;
+		margin-top: 5px;
+	}
+
+	.nav-static {
+		margin-top: 13px;
+		text-align: right;
 	}
 	
 	.dropdown-menu {
@@ -163,13 +193,7 @@ div.logo {
 
 }
 
-.nav-static ul {
-	margin: 0;
-	list-style-type: none;
-}
-.nav-static {
-	margin-top: 45px;
-}
+
 .btn-bars {
 	padding: 8px 10px 10px 10px;
 }
@@ -412,6 +436,10 @@ li.nav-header {
 	padding-left: 20px;
 }
 
+#courses-table tr {	
+	cursor: pointer;
+}
+
 @media (max-width: 767px) {
 	.courses-content {
 		clear: both;
@@ -430,9 +458,13 @@ li.nav-header {
 		border: 0;
 	}
 
+	#courses-table tr:hover {
+		background-color: #f5f5f5;
+	}
+
 	#courses-table tr {
 		border-top: #ccc solid 1px;
-		margin-bottom: 20px;
+		padding-bottom: 20px;
 		width: 100%;
 	}
 
@@ -452,7 +484,7 @@ li.nav-header {
 	}
 
 	#courses-table td.course-text {
-		height: 45px;
+		
 	}
 
 	#courses-info {
