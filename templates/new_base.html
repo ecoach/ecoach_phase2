@@ -32,7 +32,7 @@
         var ldata = "what=" + what + "&rand=" + rand ;
         $.ajax({
           type: "GET",
-          url: {% url "data_log" %},
+          url: '{% url "data_log" %}',
           data:  "what=" + what,
         }).done(function( msg ) {
             ;
