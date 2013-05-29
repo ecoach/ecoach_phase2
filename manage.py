@@ -11,7 +11,7 @@ except ImportError:
 """
 
 #import myselector.settings as settings
-from mysettings import settings_pick
+from myselector import settings
 
 if __name__ == "__main__":
-    execute_manager(settings_pick)
+    execute_manager(settings)
