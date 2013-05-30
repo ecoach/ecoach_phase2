@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" /> 
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-responsive.css" />  
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css?{% now "U" %}" media="all" />  
+    
+    <title>ECoach{% block title %}{% endblock %}</title>
+
+    <!-- 
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}mycoach/fall/css/style.css?{% now "U" %}" media="all" />
+    -->
+
+    <script src="{{ STATIC_URL }}js/jquery-1.7.2.min.js?{% now "U" %}"></script>
+
+    {% block header_files %}
+
+    {% endblock %}
+
+    {% comment %}
+    {% for key,value in args.items %}
+        {{key}} :<b> {{ value }}</b>
+        <br>
+    {% endfor %}
+    {% endcomment %}
+
+    <script type="text/javascript">
+
+    /*
+    $(document).ready(function() {
+      $(window).resize(function () {
+        if ($(window).width() < 768) {
+            $("#side-col").insertAfter($("#content-col"));
+        } else {
+            $("#side-col").insertBefore($("#content-col"));
+        }
+      });
+    });
+    */
+    
+    $(document).ready(function() {
+      $(window).bind("resize load", function () {
+        if ($(window).width() < 768) {
+           $(".side-list-items").addClass("collapse");
+          //$("#side-col .grouping").hide();
+          $("#side-col li.nav-header").show();
+          //$("#side-col").addClass("collapsed")
+          $("#side-col h3").hide();
+
+
+          $(".nav-dropdown ul").addClass("dropdown-menu");
+        } else {
+          //$("#side-col .grouping").show();
+          $(".side-list-items").removeClass("collapse");
+          $("#side-col h3").show();
+
+          $(".nav-dropdown ul").removeClass("dropdown-menu");
+        }
+      });
+
+      $(".nav-header").click(function() {
+        $(".icon-chevron-up, .icon-chevron-down", this).toggle();
+      })
+    });
+
+ 
+
+
+    </script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+     -->
+    {% block head_extra %}
+    {% endblock %}
+
+  </head>
+
+  <body class="blue-theme">
+      <div class="masthead">   
+          <div class="container clearfix">
+            <div class="wrapper">
+            <a href="/">
+              <div class="logo">
+               
+              </div>
+            </a>
+            <!-- First Menu  -->
+            {% block first_menu %}
+
+                        <div class="menu1_options clearfix">
+
+
+                    {% if user.is_staff %} 
+                    <!-- use responsive nav to handle case with more nav items -->
+                    <div class="nav-dropdown"> 
+                        <div class="btn-group">
+                            <button class="btn dropdown-toggle btn-bars" data-toggle="dropdown">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li class='menu1_option'>
+                                    <a href='/' class="current">Courses</a>
+                                </li>
+                                <li class='menu1_option'>
+                                    <a href="/">Student View</a>
+                                </li>
+                                <li class='menu1_option'>
+                                    <a href="/">Staff Pages</a>
+                                </li> 
+                                <li class='menu1_option'>
+                                    <a href="/">Logout: {{user.username}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="nav-static nav-static-wide"> 
+                        <ul>
+                            <li class='menu1_option'>
+                                <a href='/' class="current">Courses</a>
+                            </li>
+                            <li class='menu1_option'>
+                                <a href="/">Student View</a>
+                            </li>
+                            <li class='menu1_option'>
+                                <a href="/">Staff Pages</a>
+                            </li> 
+                            <li class='menu1_option'>
+                                <a href="/">Logout: {{user.username}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    {% else %}
+                     <!-- use static nav when few nav items-->
+                    <div class="nav-static">
+                        <ul>
+                            <li class='menu1_option'>
+                                <a href='/' class="current">Courses</a>
+                            </li>
+                            <li class='menu1_option'>
+                                <a href="/">Logout: {{user.username}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    {% endif %}
+
+
+            </div>
+
+
+            {% endblock %}
+            <!-- First Menu  -->
+           </div>       
+         </div>
+      </div>
+      <div class="main">
+        <div class="container">
+          <div id="main-row" class="row">
+            {% block side %}
+            {% endblock %}
+
+            
+            {% block content %}
+
+
+            {% endblock %}
+            </div>
+          </div>
+
+
+
+          <!-- Third Menu  -->
+          {% block third_menu %}
+
+          {% endblock %}
+          <!-- Third Menu  -->
+        </div>
+
+          <!-- Second Menu  -->
+          {% block second_menu %}
+
+          {% endblock %}
+          <!-- Second Menu  -->
+      </div>
+      <div class="footer">
+        <div class="tagline">
+        E2Coach is here to help you through your course - using expert advice, advice from your friends, and stats from your class, it tailors to <i>you</i>.
+        </div>
+        <div class="links">
+            <a href="#">About</a><span class="muted">&nbsp&nbsp·&nbsp</span>
+            <a href="#">Team</a><span class="muted">&nbsp&nbsp·&nbsp</span>
+            <a href="#">Press</a>
+        </div>
+      </div>
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster 
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
+  -->
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+     
+
+  </body>
+</html>
