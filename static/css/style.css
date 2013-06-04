@@ -239,13 +239,13 @@ li.nav-header {
 }
 
 
-#side-col span.label {
+#side-col-messages span.label {
 	margin-bottom: -13px;
 	position: relative;
 	top: -2px;
 }
 
-#side-col h4 {
+#side-col-messages h4 {
 	margin-left: 14px;
 	margin-top: 24px;
 }
@@ -338,7 +338,7 @@ li.nav-header {
 }
 
 @media (max-width: 767px) {
-	#side-col h4 {
+	#side-col-messages h4 {
 		display: none;
 	}
 
@@ -348,7 +348,7 @@ li.nav-header {
 }
 
 @media (min-width: 768px) {
-	#side-col li.nav-header {
+	#side-col-messages li.nav-header {
 		display: none !important;
 	}
 }
@@ -527,3 +527,45 @@ li.nav-header {
 	#courses-table td.thumb {
 		display: none;
 	}
+}
+
+
+/* Message Styles */
+	
+#message-content ul {
+	margin-top: 10px;
+}
+
+#message-content .well {
+	margin-top: 20px;
+}
+
+#message-content blockquote {
+	margin-top: 20px;
+	font-style: italic;
+}
+
+#message-content .well {
+	background-repeat: no-repeat;
+	background-position: 20px ;
+	padding-left: 90px;
+}
+
+#message-content .well.light-bulb {
+	background-image: url("../images/light-bulb.png");
+}
+
+#message-content .well.student-advice {
+	background-image: url("../images/student-advice.png");
+}
+
+#message-content div.photo-quote img {
+	width: inherit;
+	margin-top: 20px;
+}
+
+#message-content div.photo-quote blockquote {
+	min-height: 110px;
+}
+
+
