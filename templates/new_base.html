@@ -3,13 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+
+
+    <link rel="shortcut icon" href="/static/images/favicon.ico">  
 
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" /> 
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-responsive.css" />  
     <link rel="stylesheet" type="text/css" href="/static/css/style.css?{% now "U" %}" media="all" />  
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Merriweather:400,700" rel="stylesheet" type="text/css">
     
-    <title>ECoach{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}E2Coach</title>
 
     <!-- 
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}mycoach/fall/css/style.css?{% now "U" %}" media="all" />
@@ -52,15 +59,20 @@
           $("#side-col h3").hide();
 
 
-          $(".nav-dropdown ul").addClass("dropdown-menu");
+          
         } else {
           //$("#side-col .grouping").show();
           $(".side-list-items").removeClass("collapse");
           $("#side-col h3").show();
 
-          $(".nav-dropdown ul").removeClass("dropdown-menu");
+          
         }
       });
+       if ($(window).width() < 980) {
+        $(".nav-dropdown ul").addClass("dropdown-menu");
+       } else {
+        $(".nav-dropdown ul").removeClass("dropdown-menu");
+       }
 
       $(".nav-header").click(function() {
         $(".icon-chevron-up, .icon-chevron-down", this).toggle();
@@ -83,12 +95,14 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
      -->
-    {% block head_extra %}
-    {% endblock %}
+      {% block head_extra %}
+      {% endblock %}
 
   </head>
 
   <body class="blue-theme">
+      <div id="wrap">
+      <div id="main">
       <div class="masthead">   
           <div class="container clearfix">
             <div class="wrapper">
@@ -97,6 +111,11 @@
                
               </div>
             </a>
+            <span class="course-name">
+              Physics 135 <span class="course-semester">Fall 2013</span>  
+            </span>
+    
+
             <!-- First Menu  -->
             {% block first_menu %}
 
@@ -186,16 +205,19 @@
 
         </div>
       </div>
-      <div class="footer">
+    </div>
+    </div>
+      <footer class="footer">
         <div class="tagline">
-        E2Coach is here to help you through your course - using expert advice, advice from your friends, and stats from your class, it tailors to <i>you</i>.
+        E<sup>2</sup>Coach is here to help you through your course - using expert advice, advice from your friends, and stats from your class, it tailors to <i>you</i>.
         </div>
         <div class="links">
             <a href="#">About</a><span class="muted">&nbsp&nbsp·&nbsp</span>
             <a href="#">Team</a><span class="muted">&nbsp&nbsp·&nbsp</span>
             <a href="#">Press</a>
         </div>
-      </div>
+        <img class="img-polaroid" src="/static/images/um-logo.png"/>
+      </footer>
 
 
     <!-- Le javascript

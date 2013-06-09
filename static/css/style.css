@@ -13,8 +13,23 @@
   src: local('Open Sans'), local('OpenSans'), url(/static/mycoach5//mycoach/fall/css/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
 
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+}
+
+h1, h2, h3, h4 {
+	/* alt. header font could go here */
+}
+
+
+
 h2 {
 	font-size: 22px;
+}
+
+html, body {
+	height: 100%;
 }
 
 /* Main */
@@ -22,8 +37,6 @@ h2 {
 #Main_Text {
 	margin-top: 25px;
 }
-
-/* Header */
 
 body.blue-theme {
 	background-image:url('../images/blue-gradient-70px.png');
@@ -40,9 +53,29 @@ body.orange2-theme {
 	background-repeat: repeat-x;
 }
 
+
+
+
 .masthead {
 	margin-bottom:2px;
 }
+
+.masthead .course-name {
+	color: #fff;
+	font-size: 34px;
+	color: #fff;
+	font-size: 32px;
+	margin-left: 13px;
+	position: relative;
+	top: 28px;
+}
+
+.masthead .course-name .course-semester {
+	font-size: 18px;
+	color: #ddd;
+	text-transform: uppercase;
+}
+
 #header{
 	background-image:url('../images/header.png');
     background-repeat: repeat-x;
@@ -73,7 +106,7 @@ div.logo {
 }
 
 .menu1_option a {
-	
+	text-transform: uppercase;
 }
 
 #menu_options_cell{
@@ -97,7 +130,7 @@ div.logo {
 
 @media (max-width: 350px) {
 	.masthead .wrapper {
-		width: 300px;
+		width: 264px;
 	}
 }
 
@@ -137,10 +170,10 @@ div.logo {
 	list-style-type: none;
 }
 .nav-static {
-	margin-top: 45px;
+	margin-top: 36px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 980px) {
 	.nav-dropdown {
 		display: block;
 	}
@@ -191,7 +224,7 @@ div.logo {
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 979px) {
 	.dropdown-toggle {
 		display: none;
 	}
@@ -201,6 +234,18 @@ div.logo {
 	}
 
 }
+
+@media (max-width: 980px) {
+	.masthead .course-name {
+		font-size: 14px;
+		top: 27px;
+	}
+
+	.masthead .course-name .course-semester {
+		font-size: 12px;
+	}
+}
+
 
 
 .btn-bars {
@@ -389,8 +434,6 @@ li.nav-header {
 
 .footer {
 	text-align: center;
-	padding: 30px 0 180px 0;
-	margin-top: 70px;
 	border-top: 1px solid #e5e5e5;
 	background-color: #f5f5f5;	
 }
@@ -408,6 +451,34 @@ li.nav-header {
 	margin-top: 20px;
 	padding-bottom: 20px;
 }
+
+/* hack to cancel out the body padding on mobile */
+@media (max-width: 767px) {
+	footer {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+}
+
+/* A few classes that style the footer and make sure it's flushed to the bottom of the page */
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow:auto;
+  padding-bottom:200px; /* this needs to be bigger than footer height*/
+  margin-bottom: 20px	;
+}
+
+footer {
+  position: relative;
+  margin-top: -200px; /* negative value of footer height */
+  height: 200px;
+  clear:both;
+  padding-top:20px;
+} 
 
 /* Copy Student */
 #copy_table tr td{
@@ -529,15 +600,18 @@ li.nav-header {
 	}
 }
 
+.popover-title {
+	font-weight: bold;
+}
+
+.popover .popover-title .close {
+	line-height: 17px;
+}
 
 /* Message Styles */
 	
 #message-content ul {
 	margin-top: 10px;
-}
-
-#message-content .well {
-	margin-top: 20px;
 }
 
 #message-content blockquote {
@@ -546,6 +620,11 @@ li.nav-header {
 }
 
 #message-content .well {
+	margin-top: 20px;
+}
+
+#message-content .well.light-bulb,
+#message-content .well.student-advice  {
 	background-repeat: no-repeat;
 	background-position: 20px ;
 	padding-left: 90px;
@@ -559,6 +638,31 @@ li.nav-header {
 	background-image: url("../images/student-advice.png");
 }
 
+#message-content .well h2 {
+	margin-top: 0;
+	font-size: 16px;
+	line-height: 20px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+@media (min-width: 768px) {
+	/* Some standard heights for "well" modules */
+	#message-content .well.height1 { height: 50px; }
+	#message-content .well.height2 { height: 100px; }
+	#message-content .well.height3 { height: 150px; }
+	#message-content .well.height4 { height: 200px; }
+	#message-content .well.height5 { height: 250px; }
+	#message-content .well.height6 { height: 300px; }
+	#message-content .well.height7 { height: 350px; }
+	#message-content .well.height8 { height: 400px; }
+	#message-content .well.height9 { height: 450px; }
+	#message-content .well.height10 { height: 500px; }
+	#message-content .well.height11 { height: 550px; }
+	#message-content .well.height12 { height: 600px; }	
+}
+
+
 #message-content div.photo-quote img {
 	width: inherit;
 	margin-top: 20px;
@@ -568,4 +672,18 @@ li.nav-header {
 	min-height: 110px;
 }
 
+#message-content .survey_prompt, #message-content .survey_responses {
+	margin-bottom: 10px;
+}
 
+#message-content .survey_responses .survey_response input {
+	margin: 0 10px 2px 0;
+}
+
+#message-content .nav-tabs {
+	margin-bottom: -1px;
+}
+#message-content .tab-content {
+	padding: 10px;
+	border: 1px solid #ddd;
+}
