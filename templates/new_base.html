@@ -94,16 +94,13 @@
             <div class="wrapper">
             <a href="/">
               <div class="logo">
-               
               </div>
             </a>
             <!-- First Menu  -->
             {% block first_menu %}
-
                   <div class="menu1_options clearfix">
 
-
-                    {% if user.is_staff %} 
+                    {% if main_nav|length > 2 %} 
                     <!-- use responsive nav to handle case with more nav items -->
                     <div class="nav-dropdown"> 
                         <div class="btn-group">
@@ -112,57 +109,35 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <ul class="dropdown-menu">
+                            <ul>
+                            {% for nn in main_nav %}
                                 <li class='menu1_option'>
-                                    <a href='/' class="current">Courses</a>
-                                </li>
-                                <li class='menu1_option'>
-                                    <a href="/">Student View</a>
-                                </li>
-                                <li class='menu1_option'>
-                                    <a href="/">Staff Pages</a>
-                                </li> 
-                                <li class='menu1_option'>
-                                    <a href="/">Logout: {{user.username}}</a>
-                                </li>
+                                    <a href='{{nn.2}}' class="{{nn.1}}">{{nn.0}}</a>
+                            {% endfor %}
                             </ul>
                         </div>
                     </div>
 
                     <div class="nav-static nav-static-wide"> 
                         <ul>
-                            <li class='menu1_option'>
-                                <a href='/' class="current">Courses</a>
-                            </li>
-                            <li class='menu1_option'>
-                                <a href="/">Student View</a>
-                            </li>
-                            <li class='menu1_option'>
-                                <a href="/">Staff Pages</a>
-                            </li> 
-                            <li class='menu1_option'>
-                                <a href="/">Logout: {{user.username}}</a>
-                            </li>
-                        </ul>
+                            {% for nn in main_nav %}
+                                <li class='menu1_option'>
+                                    <a href='{{nn.2}}' class="{{nn.1}}">{{nn.0}}</a>
+                            {% endfor %}
+                       </ul>
                     </div>
                     {% else %}
-                     <!-- use static nav when few nav items-->
+                    <!-- use static nav when few nav items-->
                     <div class="nav-static">
                         <ul>
-                            <li class='menu1_option'>
-                                <a href='/' class="current">Courses</a>
-                            </li>
-                            <li class='menu1_option'>
-                                <a href="/">Logout: {{user.username}}</a>
-                            </li>
+                            {% for nn in main_nav %}
+                                <li class='menu1_option'>
+                                    <a href='{{nn.2}}' class="{{nn.1}}">{{nn.0}}</a>
+                            {% endfor %}
                         </ul>
                     </div>
                     {% endif %}
-
-
             </div>
-
-
             {% endblock %}
             <!-- First Menu  -->
            </div>       
