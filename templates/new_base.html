@@ -36,51 +36,29 @@
     {% endcomment %}
 
     <script type="text/javascript">
+   
+      $(document).ready(function() {
+        $(window).on("resize load", function () {
+          if ($(window).width() < 768) {
+            $(".side-list-items").addClass("collapse");
+            $("#side-col li.nav-header").show();
+            $("#side-col h3").hide();
+          } else {
+            $(".side-list-items").removeClass("collapse");
+            $("#side-col h3").show();
+          }
 
-    /*
-    $(document).ready(function() {
-      $(window).resize(function () {
-        if ($(window).width() < 768) {
-            $("#side-col").insertAfter($("#content-col"));
-        } else {
-            $("#side-col").insertBefore($("#content-col"));
-        }
+          if ($(window).width() <= 979) {
+            $(".nav-dropdown ul").addClass("dropdown-menu");
+          } else {
+            $(".nav-dropdown ul").removeClass("dropdown-menu");
+          }
+        });
+
+        $(".nav-header").click(function() {
+          $(".icon-chevron-up, .icon-chevron-down", this).toggle();
+        });  
       });
-    });
-    */
-    
-    $(document).ready(function() {
-      $(window).bind("resize load", function () {
-        if ($(window).width() < 768) {
-           $(".side-list-items").addClass("collapse");
-          //$("#side-col .grouping").hide();
-          $("#side-col li.nav-header").show();
-          //$("#side-col").addClass("collapsed")
-          $("#side-col h3").hide();
-
-
-          
-        } else {
-          //$("#side-col .grouping").show();
-          $(".side-list-items").removeClass("collapse");
-          $("#side-col h3").show();
-
-          
-        }
-      });
-       if ($(window).width() < 980) {
-        $(".nav-dropdown ul").addClass("dropdown-menu");
-       } else {
-        $(".nav-dropdown ul").removeClass("dropdown-menu");
-       }
-
-      $(".nav-header").click(function() {
-        $(".icon-chevron-up, .icon-chevron-down", this).toggle();
-      })
-    });
-
- 
-
 
     </script>
 
@@ -110,16 +88,17 @@
               <div class="logo">
               </div>
             </a>
-            <span class="course-name">
-              Physics 135 <span class="course-semester">Fall 2013</span>  
-            </span>
-    
+                    <span class="course-name">
+                      Physics 135: Fall 2013 
+                    </span> 
 
             <!-- First Menu  -->
             {% block first_menu %}
                   <div class="menu1_options clearfix">
 
-                    {% if main_nav|length > 2 %} 
+
+            
+               
                     <!-- use responsive nav to handle case with more nav items -->
                     <div class="nav-dropdown"> 
                         <div class="btn-group">
@@ -145,17 +124,7 @@
                             {% endfor %}
                        </ul>
                     </div>
-                    {% else %}
-                    <!-- use static nav when few nav items-->
-                    <div class="nav-static">
-                        <ul>
-                            {% for nn in main_nav %}
-                                <li class='menu1_option'>
-                                    <a href='{{nn.2}}' class="{{nn.1}}">{{nn.0}}</a>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endif %}
+                   
             </div>
             {% endblock %}
             <!-- First Menu  -->

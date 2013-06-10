@@ -1,17 +1,3 @@
-/* Styles and fonts */
-@font-face {
-    font-family: 'Overlock';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Overlock'), local('Overlock-Regular'), url(/static/mycoach5//mycoach/fall/css/Pr-80_x4SIOocpxz2VxC5fesZW2xOQ-xsNqO47m55DA.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(/static/mycoach5//mycoach/fall/css/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
 
 body {
 	font-family: 'Open Sans', sans-serif;
@@ -62,18 +48,11 @@ body.orange2-theme {
 
 .masthead .course-name {
 	color: #fff;
-	font-size: 34px;
+	font-size: 20px;
 	color: #fff;
-	font-size: 32px;
 	margin-left: 13px;
 	position: relative;
-	top: 28px;
-}
-
-.masthead .course-name .course-semester {
-	font-size: 18px;
-	color: #ddd;
-	text-transform: uppercase;
+	top: 36px;
 }
 
 #header{
@@ -170,10 +149,10 @@ div.logo {
 	list-style-type: none;
 }
 .nav-static {
-	margin-top: 36px;
+	margin-top: 38px;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 979px) {
 	.nav-dropdown {
 		display: block;
 	}
@@ -224,7 +203,7 @@ div.logo {
 	}
 }
 
-@media (min-width: 979px) {
+@media (min-width: 980px) {
 	.dropdown-toggle {
 		display: none;
 	}
@@ -235,10 +214,10 @@ div.logo {
 
 }
 
-@media (max-width: 980px) {
+@media (max-width: 979px) {
 	.masthead .course-name {
 		font-size: 14px;
-		top: 27px;
+		top: 36px;
 	}
 
 	.masthead .course-name .course-semester {
