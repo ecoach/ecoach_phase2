@@ -30,7 +30,7 @@ def main_nav(user, selected):
             ],
             ['Staff View', 
                 '',  
-                    reverse('course_select'),
+                    reverse('mystaff:default'),
                         'staff',
                             see_from_listB,
                                 'staff_view',
