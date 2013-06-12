@@ -3,6 +3,9 @@ from django.core.urlresolvers import reverse
 
 def main_nav(user, selected):
     
+    see_from_listA  = ['coaches', 'student_view', 'staff_view']
+    see_from_listB  = ['student_view', 'staff_view']
+
     all_main = [
             #'text'         
             #   'styling_class(es)',    
@@ -14,23 +17,22 @@ def main_nav(user, selected):
                 '',  
                     reverse('course_select'),
                         'any',
-                            ['coaches', 'student_view', 'staff_view'],
+                            see_from_listA,
                                 'coaches',
-
 
             ],
             ['Student View', 
                 '',  
-                    reverse('message_view', kwargs={'msg_id' : ''}),
+                    reverse('mycoach:message_view', kwargs={'msg_id' : ''}),
                         'staff',
-                            ['student_view', 'staff_view'],
+                            see_from_listB,
                                 'student_view',
             ],
             ['Staff View', 
                 '',  
                     reverse('course_select'),
                         'staff',
-                            ['student_view', 'staff_view'],
+                            see_from_listB,
                                 'staff_view',
 
             ],
@@ -38,7 +40,7 @@ def main_nav(user, selected):
                 '', 
                     reverse('mylogout'),
                         'any',
-                            ['coaches', 'student_view', 'staff_view'],
+                            see_from_listA,
                                 'never',
 
 
