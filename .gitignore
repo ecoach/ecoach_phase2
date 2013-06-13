@@ -1,20 +1,7 @@
 *.swp
 *.pyc
 
-mts0/
-mts1/
-mts2/
-mts3/
-mts4/
-mts5/
-
 mycoach/
-mycoach0/
-mycoach1/
-mycoach2/
-mycoach3/
-mycoach4/
-mycoach5/
 
 mydata0/
 mydata1/
@@ -24,15 +11,9 @@ mydata4/
 mydata5/
 
 myselector/
-mypump/
-myemailer/
-
-settings.py
+mypublisher/
 
 staticroot/
-
-mysql/out.txt
-mysql/run.sql
 
 djangotailoring/
 
