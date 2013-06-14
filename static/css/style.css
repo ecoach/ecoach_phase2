@@ -670,3 +670,13 @@ footer {
 	padding: 10px;
 	border: 1px solid #ddd;
 }
+
+#message-content .landscape-warning {
+	display: none;
+}
+
+@media (max-width: 480px) {
+	#message-content .landscape-warning {
+		display: block;
+	}
+}
