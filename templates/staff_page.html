@@ -1,20 +1,29 @@
 {% extends 'new_base.html' %}
 
+{% block title %}Staff Pages - {% endblock %}
+
 {% block header_files %}
 {% endblock %}
 
 {% block head_extra %}
 {% endblock %}
 
-
-
 {% block side %}
-    {% for value in steps %}
-        {{value}}
-    {% endfor %}
+    <div class="span3" id="side-col-staff">
+        <ul class="nav nav-list collapse side-list-items">
+        {% for nn in tasks_nav %}
+            <li>
+                <a href="{{nn.2}}" class="{{nn.1}}">{{nn.0}}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
 
+{% block steps_navigation %}
 {% endblock %}
 
 {% block content %}
+    Please subclass this base staff page template to add content.
 {% endblock %}
 

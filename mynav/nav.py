@@ -62,3 +62,50 @@ def main_nav(user, selected):
 
     return main_nav
 
+
+def tasks_nav(user, selected):
+    
+    all_tasks = [
+            #'text'         
+            #   'styling_class(es)',    
+            #       'links_to'
+            #           'permission_required'
+            #               'selected'
+            ['Publisher', 
+                '',  
+                    reverse('mypublisher:checkout'),
+                        'staff',
+                            'review',
+
+            ]
+        ]
+    """
+    ,
+                ['Data Loader', 
+                    '',  
+                        reverse('myloader:upload_files'),
+                            'staff',
+                                'upload_files',
+
+                ],
+                ['Emailer', 
+                    '',  
+                        reverse('mypublisher:create_bcc'),
+                            'staff',
+                                'create_bcc',
+
+                ]
+    """
+    tasks_nav = []
+    for nn in all_tasks:
+        # style the selected option
+        if nn[4] == selected:
+            nn[1] = 'current'
+        # permission?
+        if nn[3] == 'any':
+            tasks_nav.append(nn)
+        elif nn[3] == 'staff' and user.is_staff:
+            tasks_nav.append(nn)
+
+    return tasks_nav
+

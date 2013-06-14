@@ -1,23 +1,15 @@
 *.swp
 *.pyc
 
-mycoach/
-
-mydata0/
-mydata1/
-mydata2/
-mydata3/
 mydata4/
-mydata5/
 
+mycoach/
 myselector/
 mypublisher/
 
 staticroot/
 
 djangotailoring/
-
 surveytracking/
-
 tailoring2/
 
