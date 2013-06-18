@@ -270,7 +270,7 @@ li.nav-header {
 }
 
 #side-col-messages h4 {
-	margin-left: 14px;
+	margin-left: 25px;
 	margin-top: 24px;
 }
 
@@ -293,7 +293,7 @@ li.nav-header {
   display: block;
   width: 190px \9;
   margin: 0 0 -1px;
-  padding: 8px 14px;
+  padding: 8px 12px 8px 25px;
   border: 1px solid #e5e5e5;
 }
 .side-list-items > li:first-child > a{
@@ -329,8 +329,9 @@ li.nav-header {
 }
 
 .side-list-items a {
-	color: #085783;
+	color: #000;
 	line-height: 18px;
+	font-weight: bold;
 }
 
 .side-list-items .read {
@@ -338,8 +339,11 @@ li.nav-header {
 	font-weight: normal;
 }
 
-.side-list-items .current {
-	color: #000;
+.side-list-items .current, .side-list-items .current:hover {
+	color: #fff;
+	background-color: #0088cc;
+	font-weight: normal;
+	text-shadow: none;
 }
 
 .side-list-items .delete-message {
@@ -352,9 +356,10 @@ li.nav-header {
 	text-decoration: none;
 }
 
-.side-list-items button{
-	margin-top: 6px;
-	margin-right: 8px;
+.side-list-items button.close{
+	margin: 6px 0 0 8px;
+	float: left;
+}
 }
 
 .side-list-items .icon-remove:hover {
@@ -503,6 +508,30 @@ footer {
 	max-width: inherit;
 }
 
+/* Staff Pages */
+
+#side-col-staff i {
+	background-image: url("../img/glyphicons-halflings-grey.png");
+}
+.btn-group-steps {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn-group-steps > .btn:first-child {
+	border-top-left-radius: 0;
+}
+
+.btn-group-steps > .btn:last-child {
+	border-top-right-radius: 0;
+}
+
+.nav-static-steps {
+	text-align: center;
+}
+
+.
+
 /* Courses */
 
 .courses-content {
@@ -587,6 +616,12 @@ footer {
 	line-height: 17px;
 }
 
+.attribution {
+	margin-top: 20px;
+	font-size: 10px;
+	line-height: 14px;
+}
+
 /* Message Styles */
 	
 #message-content ul {
@@ -611,6 +646,15 @@ footer {
 	background-repeat: no-repeat;
 	background-position: 20px ;
 	padding-left: 90px;
+}
+
+@media (max-width: 480px) {
+	#message-content .well.light-bulb,
+	#message-content .well.student-advice  {
+		background-repeat: no-repeat;
+		background-position: center 10px;
+		padding: 64px 19px 19px 19px;
+	}
 }
 
 #message-content .well.light-bulb {
@@ -649,10 +693,6 @@ footer {
 #message-content div.photo-quote img {
 	width: inherit;
 	margin-top: 20px;
-}
-
-#message-content div.photo-quote blockquote {
-	min-height: 110px;
 }
 
 #message-content .survey_prompt, #message-content .survey_responses {

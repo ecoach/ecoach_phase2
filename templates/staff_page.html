@@ -9,14 +9,17 @@
 {% endblock %}
 
 {% block side %}
-    <div class="span3" id="side-col-staff">
-        <ul class="nav nav-list collapse side-list-items">
-        {% for nn in tasks_nav %}
-            <li>
-                <a href="{{nn.2}}" class="{{nn.1}}">{{nn.0}}</a>
-            </li>
-        {% endfor %}
-        </ul>
+    <div id="side-col-staff" class="span3">
+            <ul class="nav nav-tabs nav-stacked">
+            {% for nn in tasks_nav %}
+                <li>
+                    <a href="{{nn.2}}" class="{{nn.1}}">{{nn.0}}<i class="icon-chevron-right pull-right"></i></a>
+                </li>
+            {% endfor %}
+                <li><a href="#">User Stats<i class="icon-chevron-right pull-right"></i></a></li>
+                <li><a href="#">Data Loader<i class="icon-chevron-right pull-right"></i></a></li>
+                <li><a href="#">Email Students<i class="icon-chevron-right pull-right"></a></i></li>
+            </ul>
     </div>
 {% endblock %}
 
