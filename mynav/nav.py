@@ -13,12 +13,14 @@ def main_nav(user, selected):
             #           'permission_required'
             #               '[seen_from]'
             #                   'selected'
+            #                       subs
             ['Coaches', 
                 '',  
                     reverse('course_select'),
                         'any',
                             see_from_listA,
                                 'coaches',
+                                    [],
 
             ],
             ['Student View', 
@@ -27,6 +29,7 @@ def main_nav(user, selected):
                         'staff',
                             see_from_listB,
                                 'student_view',
+                                    [],
             ],
             ['Staff View', 
                 '',  
@@ -34,6 +37,7 @@ def main_nav(user, selected):
                         'staff',
                             see_from_listB,
                                 'staff_view',
+                                    tasks_nav(user, selected),
 
             ],
             [''.join(['Logout: ', user.username]),      
@@ -42,8 +46,7 @@ def main_nav(user, selected):
                         'any',
                             see_from_listA,
                                 'never',
-
-
+                                    [],
             ]
         ]
 
