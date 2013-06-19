@@ -80,7 +80,29 @@ def tasks_nav(user, selected):
                         'staff',
                             'review',
 
+            ],
+            ['User Stats', 
+                '',  
+                    reverse('mypublisher:checkout'),
+                        'staff',
+                            'review',
+
+            ],
+            ['Data Loader', 
+                '',  
+                    reverse('mypublisher:checkout'),
+                        'staff',
+                            'review',
+
+            ],
+            ['Email Students', 
+                '',  
+                    reverse('mypublisher:checkout'),
+                        'staff',
+                            'review',
+
             ]
+
         ]
     """
     ,

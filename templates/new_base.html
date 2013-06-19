@@ -11,7 +11,7 @@
     <!-- <meta name="viewport" content="width=700"> -->
 
 
-    <link rel="shortcut icon" href="/static/images/favicon.ico">  
+    <link rel="shortcut icon" href="/static/img/favicon.ico">  
 
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" /> 
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-responsive.css" />  
@@ -61,6 +61,11 @@
         $(".nav-header").click(function() {
           $(".icon-chevron-up, .icon-chevron-down", this).toggle();
         });  
+
+        $(".dropdown-menu a").click(function(event){
+          event.stopPropagation();
+        });
+
       });
 
     </script>
@@ -81,7 +86,7 @@
 
   </head>
 
-  <body class="blue-theme">
+  <body class="blue-theme {% block secondary_menu_class %}{% endblock %}">
       <div id="wrap">
       <div id="main">
       <div class="masthead">   
@@ -102,7 +107,7 @@
 
             
                
-                    <!-- use responsive nav to handle case with more nav items -->
+                    <!-- use responsive nav when on narrower devices -->
                     <div class="nav-dropdown"> 
                         <div class="btn-group">
                             <button class="btn dropdown-toggle btn-bars" data-toggle="dropdown">
@@ -110,20 +115,60 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <ul>
+                            <ul class="dropdown-menu">
                             {% for nn in main_nav %}
+                              {% if nn.6|length > 0 %}
+                                <li class='menu1_option dropdown sub-dropdown'>
+                                    <a href='{{nn.2}}' class="{{nn.1}}" data-toggle="dropdown">
+                                      <b class="caret"></b>
+                                      {{nn.0}}
+                                    </a>     
+                                    <ul class="dropdown-menu">
+                                      {% for ss in nn.6 %}
+                                          <li>
+                                            <a href='{{ss.2}}' class="{{ss.1}}">{{ss.0}}</a>
+                                          </li>                                    
+                                      {% endfor %}
+                                    </ul>
+                                </li>
+                              {% else %}
                                 <li class='menu1_option'>
-                                    <a href='{{nn.2}}' class="{{nn.1}}">{{nn.0}}</a>
+                                    <a href='{{nn.2}}' class="{{nn.1}}">
+                                      {{nn.0}}
+                                    </a>
+                                </li>
+                              {% endif %}
                             {% endfor %}
                             </ul>
                         </div>
                     </div>
 
+                    <!-- static nav for standard desktop browser widths -->
                     <div class="nav-static nav-static-wide"> 
                         <ul>
                             {% for nn in main_nav %}
+                              {% comment %}{% if nn.6|length > 0 %}{% endcomment %}
+                              {% if false %}
+                                <li class='menu1_option dropdown'>
+                                    <a href='{{nn.2}}' class="{{nn.1}}" data-toggle="dropdown">
+                                      {{nn.0}}
+                                      <b class="caret"></b>
+                                    </a>                         
+                                    <ul class="dropdown-menu">
+                                    {% for ss in nn.6 %}
+                                        <li>
+                                          <a href='{{ss.2}}' class="{{ss.1}}">{{ss.0}}</a>
+                                        </li>                                    
+                                    {% endfor %}
+                                    </ul>
+                                </li>
+                                {% else %}
                                 <li class='menu1_option'>
-                                    <a href='{{nn.2}}' class="{{nn.1}}">{{nn.0}}</a>
+                                    <a href='{{nn.2}}' class="{{nn.1}}">
+                                      {{nn.0}}
+                                    </a>
+                                </li>
+                                {% endif %}
                             {% endfor %}
                        </ul>
                     </div>
@@ -134,6 +179,8 @@
            </div>       
          </div>
       </div>
+      {% block secondary_menu %}
+      {% endblock %}
       <div class="main">
         <div class="container">
           {% block steps_navigation %}
@@ -159,7 +206,7 @@
             <a href="#">Team</a><span class="muted">&nbsp&nbsp·&nbsp</span>
             <a href="#">Press</a>
         </div>
-        <a href="http://www.umich.edu" target="_blank"><img class="img-polaroid" src="/static/images/um-logo.png"/></a>
+        <a href="http://www.umich.edu" target="_blank"><img class="img-polaroid" src="/static/img/um-logo.png"/></a>
       </footer>
 
 
