@@ -9,18 +9,23 @@
 {% endblock %}
 
 {% block side %}
-    <div id="side-col-staff" class="span3">
-            <ul class="nav nav-tabs nav-stacked">
+{% endblock %}
+
+{% block secondary_menu_class %}secondary-menu-enabled{% endblock %}
+{% block secondary_menu %}
+<div class="masthead secondary">
+    <div class="container">
+      <div class="wrapper navbar">
+        <ul class="nav">
             {% for nn in tasks_nav %}
                 <li>
-                    <a href="{{nn.2}}" class="{{nn.1}}">{{nn.0}}<i class="icon-chevron-right pull-right"></i></a>
+                    <a href="{{nn.2}}" class="{{nn.1}}">{{nn.0}}</a>
                 </li>
             {% endfor %}
-                <li><a href="#">User Stats<i class="icon-chevron-right pull-right"></i></a></li>
-                <li><a href="#">Data Loader<i class="icon-chevron-right pull-right"></i></a></li>
-                <li><a href="#">Email Students<i class="icon-chevron-right pull-right"></a></i></li>
-            </ul>
+        </ul>
+      </div>
     </div>
+</div>
 {% endblock %}
 
 {% block steps_navigation %}
