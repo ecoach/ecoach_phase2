@@ -7,6 +7,7 @@ tailoring2
 myselector
 mycoach
 mydata4
+mypublisher
 )
 
 #export SCRIPT_DIR=$(cd ..; pwd)
