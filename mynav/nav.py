@@ -73,7 +73,7 @@ def tasks_nav(user, selected):
             #   'styling_class(es)',    
             #       'links_to'
             #           'permission_required'
-            #               'selected'
+            #               'selected' # looks irrlivant to staff nav...
             ['Publisher', 
                 '',  
                     reverse('mypublisher:checkout'),
