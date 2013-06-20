@@ -1,6 +1,8 @@
 *.swp
 *.pyc
 
+archive01
+
 mydata4/
 
 mycoach/
@@ -12,4 +14,5 @@ staticroot/
 djangotailoring/
 surveytracking/
 tailoring2/
+
 
