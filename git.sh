@@ -2,21 +2,11 @@
 
 projects=(.\/
 djangotailoring
-myemailer
-mypump
 surveytracking
 tailoring2
 myselector
-mycoach0
-mycoach1
-mycoach2
-mycoach3
-mycoach5
-mydata0
-mydata1
-mydata2
-mydata3
-mydata5
+mycoach
+mydata4
 )
 
 #export SCRIPT_DIR=$(cd ..; pwd)
