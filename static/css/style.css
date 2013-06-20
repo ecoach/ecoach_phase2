@@ -564,24 +564,45 @@ footer {
 .table td {
 	vertical-align: middle;
 }
-.table td.button {
-	text-align: center;
-	white-space: nowrap;
-}
 
 #courses-table td.thumb {
 	width: 100px;
 }
 
 
-#courses-table td.course-text {
+#courses-table td.course-text a {
 	padding-left: 24px;
+	padding-top: 18px;
 }
 
-.table td.thumb img {
+.table-clickable-row td.thumb a, .table td.thumb img {
 	width: inherit;
 	height: inherit;
 	max-width: inherit;
+}
+
+.table-clickable-row td.button {
+	text-align: center;
+	white-space: nowrap;
+}
+
+.table-clickable-row td.button a button {
+	margin-top: 17px;
+}
+
+.table-clickable-row td {
+	padding: 0;
+}
+
+.table-clickable-row td a {
+	padding: 8px;
+	display: block;
+	color: inherit;
+	height: 75px;
+}
+
+.table-clickable-row td a:hover {
+	text-decoration: none;
 }
 
 /* Staff Pages */
