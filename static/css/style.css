@@ -565,12 +565,18 @@ footer {
 	vertical-align: middle;
 }
 
-#courses-table td.thumb {
+#current-courses-table {
+	margin-bottom: 0;
+}
+
+.courses-table td.thumb {
 	width: 100px;
 }
 
+.courses-table td.course-text {
 
-#courses-table td.course-text a {
+}
+.courses-table td.course-text a {
 	padding-left: 24px;
 	padding-top: 18px;
 }
@@ -582,7 +588,8 @@ footer {
 }
 
 .table-clickable-row td.button {
-	text-align: center;
+	text-align: right;
+	padding-right: 30px;
 	white-space: nowrap;
 }
 
@@ -603,6 +610,16 @@ footer {
 
 .table-clickable-row td a:hover {
 	text-decoration: none;
+}
+
+#archived-button-container {
+	margin-bottom: 10px;
+}
+
+
+
+.btn-hide {
+	display: none;
 }
 
 /* Staff Pages */
@@ -655,7 +672,7 @@ footer {
 	padding-left: 20px;
 }
 
-#courses-table tr {	
+.courses-table tr {	
 	cursor: pointer;
 }
 
@@ -663,46 +680,51 @@ footer {
 	.courses-content {
 		clear: both;
 	}
-	#courses-table tbody, #courses-table tr, #courses-table td{
+
+	.courses-table tbody {
+		width: 100%;
+	}
+	
+	.courses-table tbody, .courses-table tr, .courses-table td{
 		display: block;
 		float: left;
 	}
 
-	#courses-table {
+	.courses-table {
 		float: none;
 		clear: both;
 	}
 
-	#courses-table td {
+	.courses-table td {
 		border: 0;
 	}
 
-	#courses-table tr:hover {
+	.courses-table tr:hover {
 		background-color: #f5f5f5;
 	}
 
-	#courses-table tr {
+	.courses-table tr {
 		border-top: #ccc solid 1px;
 		padding-bottom: 20px;
 		width: 100%;
 	}
 
-	#courses-table td.button {
+	.courses-table td.button {
 		clear:both;
 		border-top: none;
-		width: 90%	;
-	}
-
-	#courses-table td.button a {
 		width: 95%;
 	}
 
-	#courses-table td.note {
+	.courses-table td.button button, .courses-table td.button a {
+		width: 100%;
+	}
+
+	.courses-table td.note {
 		padding-left: 8px;
 		padding-right: 0;
 	}
 
-	#courses-table td.course-text {
+	.courses-table td.course-text {
 		
 	}
 
@@ -712,7 +734,7 @@ footer {
 }
 
 @media (max-width: 355px) {
-	#courses-table td.thumb {
+	.courses-table td.thumb {
 		display: none;
 	}
 }
