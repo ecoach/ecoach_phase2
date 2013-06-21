@@ -346,7 +346,7 @@ li.nav-header {
 }
 
 #side-col-messages h4 {
-	margin-left: 25px;
+	margin-left: 15px;
 	margin-top: 24px;
 }
 
@@ -369,7 +369,7 @@ li.nav-header {
   display: block;
 
   margin: 0 0 -1px;
-  padding: 8px 12px 8px 25px;
+  padding: 8px 12px 8px 15px;
   border: 1px solid #e5e5e5;
 }
 .side-list-items > li:first-child > a{
@@ -684,7 +684,7 @@ footer {
 	.courses-table tbody {
 		width: 100%;
 	}
-	
+
 	.courses-table tbody, .courses-table tr, .courses-table td{
 		display: block;
 		float: left;
@@ -839,7 +839,6 @@ footer {
 }
 #message-content .tab-content {
 	padding: 10px;
-	border: 1px solid #ddd;
 }
 
 #message-content .landscape-warning {
