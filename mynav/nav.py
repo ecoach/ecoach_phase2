@@ -76,28 +76,28 @@ def tasks_nav(user, selected):
             #               'selected' # looks irrlivant to staff nav...
             ['Publisher', 
                 '',  
-                    reverse('mypublisher:checkout'),
+                    reverse('mypublisher:review'),
                         'staff',
                             'review',
 
             ],
             ['User Stats', 
                 '',  
-                    reverse('mypublisher:checkout'),
+                    reverse('mypublisher:review'),
                         'staff',
                             'review',
 
             ],
             ['Data Loader', 
                 '',  
-                    reverse('mypublisher:checkout'),
+                    reverse('mypublisher:review'),
                         'staff',
                             'review',
 
             ],
             ['Email Students', 
                 '',  
-                    reverse('mypublisher:checkout'),
+                    reverse('mypublisher:review'),
                         'staff',
                             'review',
 
