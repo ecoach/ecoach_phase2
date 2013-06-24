@@ -15,7 +15,7 @@ export SCRIPT_DIR=$(pwd)
 
 for i in "${projects[@]}"
 do
-    echo ----------$i--------------
+    printf "\n----------$i--------------\n"
     #cd $SRC_DIR\/$i
     cd $SCRIPT_DIR\/$i
     git $1
