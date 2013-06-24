@@ -8,6 +8,7 @@ myselector
 mycoach
 mydata4
 mypublisher
+myusage
 )
 
 #export SCRIPT_DIR=$(cd ..; pwd)

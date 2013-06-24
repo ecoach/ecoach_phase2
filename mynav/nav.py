@@ -78,16 +78,31 @@ def tasks_nav(user, selected):
                 '',  
                     reverse('mypublisher:review'),
                         'staff',
-                            'review',
+                            'publish',
 
             ],
             ['User Stats', 
                 '',  
-                    reverse('mypublisher:review'),
+                    reverse('myusage:by_user'),
                         'staff',
-                            'review',
+                            'by_user',
 
-            ],
+            ]
+        ]
+    tasks_nav = []
+    for nn in all_tasks:
+        # style the selected option
+        if nn[4] == selected:
+            nn[1] = 'current'
+        # permission?
+        if nn[3] == 'any':
+            tasks_nav.append(nn)
+        elif nn[3] == 'staff' and user.is_staff:
+            tasks_nav.append(nn)
+
+    return tasks_nav
+
+"""
             ['Data Loader', 
                 '',  
                     reverse('mypublisher:review'),
@@ -102,35 +117,4 @@ def tasks_nav(user, selected):
                             'review',
 
             ]
-
-        ]
-    """
-    ,
-                ['Data Loader', 
-                    '',  
-                        reverse('myloader:upload_files'),
-                            'staff',
-                                'upload_files',
-
-                ],
-                ['Emailer', 
-                    '',  
-                        reverse('mypublisher:create_bcc'),
-                            'staff',
-                                'create_bcc',
-
-                ]
-    """
-    tasks_nav = []
-    for nn in all_tasks:
-        # style the selected option
-        if nn[4] == selected:
-            nn[1] = 'current'
-        # permission?
-        if nn[3] == 'any':
-            tasks_nav.append(nn)
-        elif nn[3] == 'staff' and user.is_staff:
-            tasks_nav.append(nn)
-
-    return tasks_nav
-
+"""

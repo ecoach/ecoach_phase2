@@ -29,6 +29,17 @@
 {% endblock %}
 
 {% block steps_navigation %}
+    <div class="nav-static-steps">
+        <div class="btn-group btn-group-steps">
+       	{% autoescape off %}
+            {% if steps_nav|length > 1 %}
+                {% for nn in steps_nav %}
+                    <a href="{{nn.2}}" class="btn {{nn.1}}">{{nn.0}}</a>
+                {% endfor %}
+            {% endif %}
+        {% endautoescape %}
+        </div>
+    </div>
 {% endblock %}
 
 {% block content %}
