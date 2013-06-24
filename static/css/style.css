@@ -28,6 +28,10 @@ html, body {
 	display: none;
 }
 
+.masthead.secondary .current {
+	font-weight: bold;
+}
+
 @media(min-width: 980px) {
 	body.blue-theme.secondary-menu-enabled {
 		background-image:url('../img/blue-gradient-100px.png');
@@ -458,6 +462,13 @@ li.nav-header {
 	}
 }
 
+.nav-stacked {
+	margin-top: 20px;	
+}
+
+.nav-stacked i {
+	background-image: url("../img/glyphicons-halflings-grey.png");	
+}
 
 /* Tab menu
 
@@ -624,9 +635,6 @@ footer {
 
 /* Staff Pages */
 
-#side-col-staff i {
-	background-image: url("../img/glyphicons-halflings-grey.png");
-}
 .btn-group-steps {
 	margin-left: auto;
 	margin-right: auto;
@@ -747,8 +755,9 @@ footer {
 	line-height: 17px;
 }
 
+/* Info Pages */
+
 .attribution {
-	margin-top: 20px;
 	font-size: 10px;
 	line-height: 14px;
 }
@@ -806,18 +815,18 @@ footer {
 
 @media (min-width: 768px) {
 	/* Some standard heights for "well" modules */
-	#message-content .well.height1 { height: 50px; }
-	#message-content .well.height2 { height: 100px; }
-	#message-content .well.height3 { height: 150px; }
-	#message-content .well.height4 { height: 200px; }
-	#message-content .well.height5 { height: 250px; }
-	#message-content .well.height6 { height: 300px; }
-	#message-content .well.height7 { height: 350px; }
-	#message-content .well.height8 { height: 400px; }
-	#message-content .well.height9 { height: 450px; }
-	#message-content .well.height10 { height: 500px; }
-	#message-content .well.height11 { height: 550px; }
-	#message-content .well.height12 { height: 600px; }	
+	#message-content .well.height1 { min-height: 50px; }
+	#message-content .well.height2 { min-height: 100px; }
+	#message-content .well.height3 { min-height: 150px; }
+	#message-content .well.height4 { min-height: 200px; }
+	#message-content .well.height5 { min-height: 250px; }
+	#message-content .well.height6 { min-height: 300px; }
+	#message-content .well.height7 { min-height: 350px; }
+	#message-content .well.height8 { min-height: 400px; }
+	#message-content .well.height9 { min-height: 450px; }
+	#message-content .well.height10 { min-height: 500px; }
+	#message-content .well.height11 { min-height: 550px; }
+	#message-content .well.height12 { min-height: 600px; }	
 }
 
 
@@ -849,4 +858,20 @@ footer {
 	#message-content .landscape-warning {
 		display: block;
 	}
+}
+
+#message-content .modal {
+    /* new custom width */
+    width: 590px;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: -265px;
+}
+
+#message-content .thumbnail .caption {
+	text-align: center;
+	font-weight: bold;
+}
+
+#message-content .thumbnail .survey_responses {
+	margin-bottom: 0;
 }
