@@ -875,3 +875,24 @@ footer {
 #message-content .thumbnail .survey_responses {
 	margin-bottom: 0;
 }
+
+#message-content a.clickable-icon {
+	color: #000;
+}
+
+#message-content a.clickable-icon:hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+#message-content a.helpful-icon {
+	margin-left: 8px;
+}
+
+#message-content a i.icon-thumbs-up-alt {
+	color: #555;
+}
+
+#message-content a i.icon-thumbs-up-alt:hover {
+	color: #000;
+}
