@@ -78,14 +78,14 @@ def tasks_nav(user, selected):
                 '',  
                     reverse('mypublisher:review'),
                         'staff',
-                            'publish',
+                            'publisher',
 
             ],
             ['User Stats', 
                 '',  
                     reverse('myusage:by_user'),
                         'staff',
-                            'by_user',
+                            'usage',
 
             ]
         ]
