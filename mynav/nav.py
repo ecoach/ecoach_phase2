@@ -81,6 +81,13 @@ def tasks_nav(user, selected):
                             'publisher',
 
             ],
+            ['Data Loader', 
+                '',  
+                    reverse('myloader:archive'),
+                        'staff',
+                            'data_loader',
+
+            ],
             ['User Stats', 
                 '',  
                     reverse('myusage:by_user'),
@@ -103,13 +110,6 @@ def tasks_nav(user, selected):
     return tasks_nav
 
 """
-            ['Data Loader', 
-                '',  
-                    reverse('mypublisher:review'),
-                        'staff',
-                            'review',
-
-            ],
             ['Email Students', 
                 '',  
                     reverse('mypublisher:review'),

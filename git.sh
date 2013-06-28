@@ -8,6 +8,8 @@ myselector
 mycoach
 mydata4
 mypublisher
+myloader
+mypump
 myusage
 )
 
