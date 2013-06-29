@@ -88,11 +88,11 @@ def tasks_nav(user, selected):
                             'data_loader',
 
             ],
-            ['User Stats', 
+            ['Data Exporter', 
                 '',  
-                    reverse('myusage:by_user'),
+                    reverse('myexporter:select_table'),
                         'staff',
-                            'usage',
+                            'data_exporter',
 
             ]
         ]

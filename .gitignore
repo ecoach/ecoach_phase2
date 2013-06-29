@@ -3,19 +3,23 @@
 
 archive01
 
-mydata4/
-
-mycoach/
-myselector/
-mypublisher/
-myusage/
-myloader/
-mypump/
-
-staticroot/
-
 djangotailoring/
 surveytracking/
 tailoring2/
+
+myselector/
+
+mydata4/
+
+mycoach/
+mypublisher/
+myloader/
+myexporter/
+mypump/
+myusage/
+mylogger/
+
+staticroot/
+
 
 
