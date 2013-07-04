@@ -1,7 +1,5 @@
 #!/bin/sh
 
-./colstatic.sh
-
 mysql.server start 
 #--pid-file=~/mypid
 
