@@ -3,8 +3,8 @@ from django.core.urlresolvers import reverse
 
 def main_nav(user, selected):
     
-    see_from_listA  = ['static_linkback', 'coaches', 'student_view', 'staff_view']
-    see_from_listB  = ['student_view', 'staff_view']
+    see_from_listA  = ['student_linkback', 'static_linkback', 'coaches', 'student_view', 'staff_view']
+    see_from_listB  = ['student_linkback', 'student_view', 'staff_view']
 
     all_main = [
             #'text'         

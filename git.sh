@@ -13,6 +13,7 @@ myexporter
 mypump
 myusage
 mylogger
+nts
 )
 
 #export SCRIPT_DIR=$(cd ..; pwd)

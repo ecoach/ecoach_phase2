@@ -1,3 +1,5 @@
+{% load url from future %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,9 +26,10 @@
 
     <!-- 
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}mycoach/fall/css/style.css?{% now "U" %}" media="all" />
+    <script src="{{ STATIC_URL }}js/jquery-1.7.2.min.js?{% now "U" %}"></script>
     -->
 
-    <script src="{{ STATIC_URL }}js/jquery-1.7.2.min.js?{% now "U" %}"></script>
+    <script type"text/JavaScript" src="{{ STATIC_URL }}nts/js/jquery-1.10.1.min.js?{% now "U" %}"></script>
 
     {% block header_files %}
 
@@ -41,29 +44,29 @@
 
     <script type="text/javascript">
    
-      $(document).ready(function() {
-        $(window).on("resize load", function () {
-          if ($(window).width() < 768) {
-            $(".side-list-items").addClass("collapse");
-            $("#side-col li.nav-header").show();
-            $("#side-col h3").hide();
+      jQuery(document).ready(function() {
+        jQuery(window).on("resize load", function () {
+          if (jQuery(window).width() < 768) {
+            jQuery(".side-list-items").addClass("collapse");
+            jQuery("#side-col li.nav-header").show();
+            jQuery("#side-col h3").hide();
           } else {
-            $(".side-list-items").removeClass("collapse");
-            $("#side-col h3").show();
+            jQuery(".side-list-items").removeClass("collapse");
+            jQuery("#side-col h3").show();
           }
 
-          if ($(window).width() <= 979) {
-            $(".nav-dropdown ul").addClass("dropdown-menu");
+          if (jQuery(window).width() <= 979) {
+            jQuery(".nav-dropdown ul").addClass("dropdown-menu");
           } else {
-            $(".nav-dropdown ul").removeClass("dropdown-menu");
+            jQuery(".nav-dropdown ul").removeClass("dropdown-menu");
           }
         });
 
-        $(".nav-header").click(function() {
-          $(".icon-chevron-up, .icon-chevron-down", this).toggle();
+        jQuery(".nav-header").click(function() {
+          jQuery(".icon-chevron-up, .icon-chevron-down", this).toggle();
         });  
 
-        $(".dropdown-menu a").click(function(event){
+        jQuery(".dropdown-menu a").click(function(event){
           event.stopPropagation();
         });
 
