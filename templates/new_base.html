@@ -43,34 +43,67 @@
     {% endcomment %}
 
     <script type="text/javascript">
-   
-      jQuery(document).ready(function() {
-        jQuery(window).on("resize load", function () {
-          if (jQuery(window).width() < 768) {
-            jQuery(".side-list-items").addClass("collapse");
-            jQuery("#side-col li.nav-header").show();
-            jQuery("#side-col h3").hide();
-          } else {
-            jQuery(".side-list-items").removeClass("collapse");
-            jQuery("#side-col h3").show();
-          }
+      $ = "thing";
+      var ecoach = {};
 
-          if (jQuery(window).width() <= 979) {
-            jQuery(".nav-dropdown ul").addClass("dropdown-menu");
-          } else {
-            jQuery(".nav-dropdown ul").removeClass("dropdown-menu");
-          }
-        });
-
-        jQuery(".nav-header").click(function() {
-          jQuery(".icon-chevron-up, .icon-chevron-down", this).toggle();
-        });  
-
-        jQuery(".dropdown-menu a").click(function(event){
-          event.stopPropagation();
-        });
-
+      jQuery(document).ready(function($) {    
+        ecoach.navigation.initResponsiveNavs();
+        ecoach.navigation.initNavBehaviors();
       });
+
+      !function ($) {
+        ecoach.navigation = {
+          initResponsiveNavs: function() { 
+            $(window).on("resize load", function () {
+              if ($(window).width() < 768) {
+                $(".side-list-items").addClass("collapse");
+                $("#side-col li.nav-header").show();
+                $("#side-col h3").hide();
+              } else {
+                $(".side-list-items").removeClass("collapse");
+                $("#side-col h3").show();
+              }
+
+              if ($(window).width() <= 979) {
+                $(".nav-dropdown ul").addClass("dropdown-menu");
+              } else {
+                $(".nav-dropdown ul").removeClass("dropdown-menu");
+              }
+            });
+          },
+          initNavBehaviors: function() {
+              $(".nav-header").click(function() {
+                $(".icon-chevron-up, .icon-chevron-down", this).toggle();
+              });  
+
+              $(".dropdown-menu a").click(function(event){
+                event.stopPropagation();
+              });
+          }
+        }
+
+        ecoach.util = {
+            // handles pushing log events both to our internal logging api and google analytics
+          logEvent: function(logEvent) {                
+              var href = $(this).attr("href"); //TODO: this should be the URI for the write log event service
+              $.ajax({
+                  type: "GET", //TODO: change this to POST once you have a working endpoint
+                  url: href,
+                  data: { 
+                      logEvent: logEvent,
+                  }
+              }); 
+
+              // TODO: push event to google analytics
+              // need to get a test account so we can see whether pathname will automatically show up or if we should push it as a category or label. 
+              //_gaq.push(['_trackEvent', window.location.pathname, logEvent, '{{ user.username }}']);
+          }
+        }
+
+
+      }(window.jQuery);
+
+            
 
     </script>
 
