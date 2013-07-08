@@ -85,7 +85,7 @@
         ecoach.util = {
             // handles pushing log events both to our internal logging api and google analytics
           logEvent: function(logEvent) {                
-              var href = $(this).attr("href"); //TODO: this should be the URI for the write log event service
+              var href = "{% url 'mylogger:what_log' %}";
               $.ajax({
                   type: "GET", //TODO: change this to POST once you have a working endpoint
                   url: href,
