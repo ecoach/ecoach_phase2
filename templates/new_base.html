@@ -43,7 +43,19 @@
     {% endcomment %}
 
     <script type="text/javascript">
-      $ = "thing";
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      // TODO: cookie domain should be false and a different UA code should be used when deployed to production. is there an easy way in django to expose to a view which environment the application is deployed to?
+      ga('create', 'UA-37331371-3', {
+        'cookieDomain': 'none' 
+      });
+
+      ga('send', 'pageview');
+
       var ecoach = {};
 
       jQuery(document).ready(function($) {    
@@ -80,25 +92,35 @@
                 event.stopPropagation();
               });
           }
-        }
+        };
 
         ecoach.util = {
-            // handles pushing log events both to our internal logging api and google analytics
-          logEvent: function(logEvent) {                
-              var href = "{% url 'mylogger:what_log' %}";
-              $.ajax({
-                  type: "GET", //TODO: change this to POST once you have a working endpoint
-                  url: href,
-                  data: { 
-                      logEvent: logEvent,
-                  }
-              }); 
+          // handles pushing log events both to our internal logging api and google analytics
+            logEvent: function(eventCategory, eventAction, eventLabel) {                
+                var href = "{% url 'mylogger:what_log' %}";
+                $.ajax({
+                    type: "GET", //TODO: change this to POST once you have a working endpoint
+                    url: href,
+                    data: { 
+                        logEvent: eventCategory, //need to define this format and reconcile GA's separation of category/action/label with our internal tracking model and JSON string used in the NTS example
+                    }
+                });
 
-              // TODO: push event to google analytics
-              // need to get a test account so we can see whether pathname will automatically show up or if we should push it as a category or label. 
-              //_gaq.push(['_trackEvent', window.location.pathname, logEvent, '{{ user.username }}']);
-          }
-        }
+
+                //GA doesn't send the hash by default, but we'd like these because it will capture which tab the event occurred on
+                var locationWithHash = window.location.pathname +
+                    window.location.search +
+                    window.location.hash;
+
+                //NOTE: per GA terms of service, PII (personally identifiable information) such as a username cannot be sent to GA 
+                if (eventLabel != null) {
+                    ga('send', 'event', eventCategory, eventAction, eventLabel, {page: locationWithHash}); 
+                    
+                } else {
+                    ga('send', 'event', eventCategory, eventAction, {page: locationWithHash});
+                }
+            }
+        };
 
 
       }(window.jQuery);
