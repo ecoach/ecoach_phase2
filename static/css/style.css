@@ -767,7 +767,9 @@ footer {
 }
 
 #message-content .well.light-bulb,
-#message-content .well.student-advice  {
+#message-content .well.student-advice,
+#message-content .well.question,
+#message-content .well.checkbox  {
 	background-repeat: no-repeat;
 	background-position: 20px ;
 	padding-left: 90px;
@@ -775,7 +777,9 @@ footer {
 
 @media (max-width: 480px) {
 	#message-content .well.light-bulb,
-	#message-content .well.student-advice  {
+	#message-content .well.student-advice,
+	#message-content .well.question,
+	#message-content .well.checkbox  {
 		background-repeat: no-repeat;
 		background-position: center 10px;
 		padding: 64px 19px 19px 19px;
@@ -788,6 +792,14 @@ footer {
 
 #message-content .well.student-advice {
 	background-image: url("../img/student-advice.png");
+}
+
+#message-content .well.question {
+	background-image: url("../img/question.png");
+}
+
+#message-content .well.checkbox {
+	background-image: url("../img/checkbox.png");
 }
 
 #message-content .well h2 {
@@ -889,7 +901,7 @@ footer {
 }
 
 #message-content .thumbnail {
-	margin-top:	10px;	
+	margin-top:	5px;	
 	margin-bottom: 10px;
 	-webkit-border-radius: 0;
 	   -moz-border-radius: 0;
