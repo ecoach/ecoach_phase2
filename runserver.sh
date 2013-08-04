@@ -34,6 +34,11 @@ elif [[ $1 == "mts5" ]] ; then
     source ~/virtualenv/v1/bin/activate
     cd ~/bitbucket/ecoach_webapps
     sudo python manage.py runserver localhost:80 --settings=mycoach5.settings
+elif [[ $1 == "mts6" ]] ; then
+    source ~/virtualenv/v1/bin/activate
+    cd ~/bitbucket/ecoach_webapps
+    sudo python manage.py runserver localhost:80 --settings=mydata6.settings
+    #sudo python manage.py runserver 0.0.0.0:80 --settings=mydata4.settings
 else
     echo "myrunserver < pick | mts0 | mts1 | ... | mtsX > to pick app"
 fi
