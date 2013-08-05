@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#myexporter
 projects=(.\/
 djangotailoring
 surveytracking
@@ -10,7 +11,6 @@ mydata6
 mycoach
 mypublisher
 myloader
-myexporter
 mypump
 myusage
 mylogger

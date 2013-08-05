@@ -27,6 +27,7 @@ elif [[ $1 == "mts3" ]] ; then
     sudo python manage.py runserver localhost:80 --settings=mycoach3.settings
 elif [[ $1 == "mts4" ]] ; then
     source ~/virtualenv/v1/bin/activate
+    #source ~/virtualenv/v4/bin/activate
     cd ~/bitbucket/ecoach_webapps
     sudo python manage.py runserver localhost:80 --settings=mydata4.settings
     #sudo python manage.py runserver 0.0.0.0:80 --settings=mydata4.settings
