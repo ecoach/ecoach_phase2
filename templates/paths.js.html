@@ -1,0 +1,10 @@
+{% load settings_to_template %}
+
+var CONF = {
+    domain : '',
+    coach: 'coach4',   
+    hello : function ()
+    {
+        alert('{% settings_value "DPROJ_NAME" %}');
+    } 
+};
