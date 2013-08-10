@@ -12,6 +12,7 @@ except ImportError:
 
 #import seed project settings
 from mydata4 import settings
+#from mydata6 import settings
 
 if __name__ == "__main__":
     execute_manager(settings)

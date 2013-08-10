@@ -1,5 +1,4 @@
 from django.core.urlresolvers import reverse
-#from mycoach import urls
 
 def main_nav(user, selected):
     
@@ -16,7 +15,7 @@ def main_nav(user, selected):
             #                       subs
             ['Coaches', 
                 '',  
-                    reverse('course_select'),
+                    reverse('myselector:course_select'),
                         'any',
                             see_from_listA,
                                 'coaches',
@@ -42,7 +41,7 @@ def main_nav(user, selected):
             ],
             [''.join(['Logout: ', user.username]),      
                 '', 
-                    reverse('mylogout'),
+                    reverse('myselector:mylogout'),
                         'any',
                             see_from_listA,
                                 'never',
