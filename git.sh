@@ -6,8 +6,6 @@ djangotailoring
 surveytracking
 tailoring2
 myselector
-mydata4
-mydata6
 mycoach
 mypublisher
 myloader
@@ -15,6 +13,9 @@ mypump
 myusage
 mylogger
 nts
+mydata4
+mydata6
+mydata7
 )
 
 #export SCRIPT_DIR=$(cd ..; pwd)
