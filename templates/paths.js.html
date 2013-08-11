@@ -2,7 +2,7 @@
 
 var CONF = {
     domain : '',
-    coach: 'coach4',   
+    coach: '{% settings_value "COACH_URL" %}',   
     hello : function ()
     {
         alert('{% settings_value "DPROJ_NAME" %}');

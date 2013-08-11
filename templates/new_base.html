@@ -1,3 +1,4 @@
+{% load settings_to_template %}
 {% load url from future %}
 
 <!DOCTYPE html>
@@ -143,6 +144,9 @@
               </div>
             </a>
             {% block course_name %}
+                <span class="course-name">
+                    {% settings_value "COACH_NAME" %}
+                </span> 
             {% endblock %}
 
             <!-- First Menu  -->
