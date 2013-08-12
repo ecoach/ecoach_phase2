@@ -16,6 +16,8 @@ nts
 mydata4
 mydata6
 mydata7
+mydata8
+mydata9
 )
 
 #export SCRIPT_DIR=$(cd ..; pwd)
