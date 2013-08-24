@@ -93,6 +93,13 @@ def tasks_nav(user, selected):
                         'staff',
                             'data_exporter',
 
+            ],
+            ['Emailer', 
+                '',  
+                    reverse('myemailer:default'),
+                        'staff',
+                            'emailer',
+
             ]
         ]
     tasks_nav = []
@@ -108,12 +115,4 @@ def tasks_nav(user, selected):
 
     return tasks_nav
 
-"""
-            ['Email Students', 
-                '',  
-                    reverse('mypublisher:review'),
-                        'staff',
-                            'review',
 
-            ]
-"""

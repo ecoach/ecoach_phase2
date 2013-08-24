@@ -9,6 +9,7 @@ mycoach
 mypublisher
 myloader
 myexporter
+myemailer
 mypump
 myusage
 mylogger
