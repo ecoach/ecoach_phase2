@@ -44,10 +44,11 @@
 
         // TODO: cookie domain should be false and a different UA code should be used when deployed to production. 
         //  is there an easy way in django to expose to a view which environment the application is deployed to?
-        ga('create', 'UA-37331371-3', {
-            'cookieDomain': 'none' 
-        });
-
+        ga('create', 'UA-37331371-3', 'umich.edu');
+        //ga('create', 'UA-37331371-3');
+        //ga('create', 'UA-37331371-3', {
+        //    'cookieDomain': 'none' 
+        //});
         ga('send', 'pageview');
 
         var ecoach = {};
@@ -90,28 +91,31 @@
             };
             ecoach.util = {
                 // handles pushing log events both to our internal logging api and google analytics
-                logEvent: function(category, action, label) {
-                    // derived data items
-                    // GA doesn't send the hash by default, but we'd like these because it will capture which tab the event occurred on
+                logEvent: function(pageview, elog, json) {
+                    // configure data
                     var locationWithHash = (window.location.pathname + window.location.search + window.location.hash);
                     var href = "{% url 'mylogger:what_log' %}";
-                    // data configured before this
                     $.ajax({
                         //TODO: change this to POST once you have a working endpoint
                         type: "GET", 
                         url: href,
                         data: { 
-                            // need to define this format and reconcile GA's separation of 
-                            // category/action/label with our internal tracking model and JSON string used in the NTS example
-                            logEvent: category, 
+                            url: locationWithHash,
+                            category: elog.category || 'no-category',
+                            action: elog.action || 'no-action',
+                            label: label || 'no-label',
+                            value: value || -99,
+                            json: json || '{}'
                         }
                     });
-                    //NOTE: per GA terms of service, PII (personally identifiable information) such as a username cannot be sent to GA 
-                    if (label != null){
-                        ga('send', 'event', category, action, label, {page: locationWithHash}); 
-                    } 
-                    else{
-                        ga('send', 'event', category, action, {page: locationWithHash});
+                    //NOTE: per GA terms of service username cannot be sent to GA 
+                    if (pageview){
+                        ga('send', 'pageview', {
+                            'page': locationWithHash
+                        });
+                    }
+                    if (elog){
+                        ga('send', 'event', elog);
                     }
                 }
             };
