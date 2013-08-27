@@ -88,11 +88,14 @@
                     });
                 }
             };
-
             ecoach.util = {
                 // handles pushing log events both to our internal logging api and google analytics
-                logEvent: function(eventCategory, eventAction, eventLabel) {
+                logEvent: function(category, action, label) {
+                    // derived data items
+                    // GA doesn't send the hash by default, but we'd like these because it will capture which tab the event occurred on
+                    var locationWithHash = (window.location.pathname + window.location.search + window.location.hash);
                     var href = "{% url 'mylogger:what_log' %}";
+                    // data configured before this
                     $.ajax({
                         //TODO: change this to POST once you have a working endpoint
                         type: "GET", 
@@ -100,23 +103,19 @@
                         data: { 
                             // need to define this format and reconcile GA's separation of 
                             // category/action/label with our internal tracking model and JSON string used in the NTS example
-                            logEvent: eventCategory, 
+                            logEvent: category, 
                         }
                     });
-                    //GA doesn't send the hash by default, but we'd like these because it will capture which tab the event occurred on
-                    var locationWithHash = (window.location.pathname + window.location.search + window.location.hash);
                     //NOTE: per GA terms of service, PII (personally identifiable information) such as a username cannot be sent to GA 
-                    if (eventLabel != null) {
-                        ga('send', 'event', eventCategory, eventAction, eventLabel, {page: locationWithHash}); 
+                    if (label != null){
+                        ga('send', 'event', category, action, label, {page: locationWithHash}); 
                     } 
-                    else {
-                        ga('send', 'event', eventCategory, eventAction, {page: locationWithHash});
+                    else{
+                        ga('send', 'event', category, action, {page: locationWithHash});
                     }
                 }
             };
         }(window.jQuery);
-
-
 
     </script>
 
