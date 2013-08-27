@@ -49,13 +49,13 @@
         //ga('create', 'UA-37331371-3', {
         //    'cookieDomain': 'none' 
         //});
-        ga('send', 'pageview');
-
+        
         var ecoach = {};
 
         jQuery(document).ready(function($) {
             ecoach.navigation.initResponsiveNavs();
             ecoach.navigation.initNavBehaviors();
+            ecoach.util.logEvent(true);
         });
 
         !function ($) {
@@ -92,6 +92,7 @@
             ecoach.util = {
                 // handles pushing log events both to our internal logging api and google analytics
                 logEvent: function(pageview, elog, json) {
+                    elog = elog || {}
                     // configure data
                     var locationWithHash = (window.location.pathname + window.location.search + window.location.hash);
                     var href = "{% url 'mylogger:what_log' %}";
@@ -101,10 +102,10 @@
                         url: href,
                         data: { 
                             url: locationWithHash,
-                            category: elog.category || 'no-category',
-                            action: elog.action || 'no-action',
-                            label: label || 'no-label',
-                            value: value || -99,
+                            category: elog.eventCategory || 'no-category',
+                            action: elog.eventAction || 'no-action',
+                            label: elog.eventLabel || 'no-label',
+                            value: elog.eventValue || 0,
                             json: json || '{}'
                         }
                     });
