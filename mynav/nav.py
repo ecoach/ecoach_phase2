@@ -94,6 +94,13 @@ def tasks_nav(user, selected):
                             'data_exporter',
 
             ],
+            ['Usage', 
+                '',  
+                    reverse('myusage:default'),
+                        'staff',
+                            'usage',
+
+            ],
             ['Emailer', 
                 '',  
                     reverse('myemailer:default'),
