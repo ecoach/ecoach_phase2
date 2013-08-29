@@ -3,6 +3,7 @@
 var CONF = {
     domain : '',
     coach: '{% settings_value "COACH_URL" %}',   
+    logger_url: '{% url 'mylogger:what_log' %}',
     hello : function ()
     {
         alert('{% settings_value "DPROJ_NAME" %}');
