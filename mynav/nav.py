@@ -22,7 +22,7 @@ def main_nav(user, selected):
                                     [],
 
             ],
-            ['Student View', 
+            ['Messages', 
                 '',  
                     reverse('mycoach:message_view', kwargs={'msg_id' : ''}),
                         'staff',
