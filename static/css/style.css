@@ -650,16 +650,12 @@ footer {
 
 .table-clickable-row td a {
 	padding: 8px;
+	display: block;
 	color: inherit;
 	height: 75px;
 }
 
-.table-clickable-row td a {
-	display: block;
-
-}
-
-.table-clickable-row td a {
+.table-clickable-row td a:hover {
 	text-decoration: none;
 }
 
