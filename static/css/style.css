@@ -401,12 +401,24 @@ li.nav-header {
   background-color: #fff;
 }
 
-.side-list-items > li > a, .side-list > li.nav-header {
+.side-list > li.nav-header {
   display: block;
-
-  margin: 0 0 -1px;
+  margin: 0 0 0;
   padding: 8px 12px 8px 15px;
   border: 1px solid #e5e5e5;
+}
+
+.side-list-items > li:first-child > a {
+	border-top: 1px solid #e5e5e5;
+}
+
+.side-list-items > li > a {
+  display: block;
+  margin: 0 0 0;
+  padding: 8px 12px 8px 15px;
+  border-bottom: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;  
 }
 
 .side-list > li.nav-header {
@@ -468,6 +480,10 @@ li.nav-header {
 	background-image: url("../img/glyphicons-halflings.png");
 }
 
+#side-col-messages li.nav-header {
+	display: none !important;
+}
+
 @media (max-width: 767px) {
 	#side-col-messages h4 {
 		display: none;
@@ -476,11 +492,9 @@ li.nav-header {
 	.side-list-items .icon-remove {
 		right: 15px;
 	}
-}
 
-@media (min-width: 768px) {
 	#side-col-messages li.nav-header {
-		display: none !important;
+		display: block !important;
 	}
 }
 
@@ -636,12 +650,16 @@ footer {
 
 .table-clickable-row td a {
 	padding: 8px;
-	display: block;
 	color: inherit;
 	height: 75px;
 }
 
-.table-clickable-row td a:hover {
+.table-clickable-row td a {
+	display: block;
+
+}
+
+.table-clickable-row td a {
 	text-decoration: none;
 }
 
