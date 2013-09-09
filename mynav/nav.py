@@ -24,7 +24,7 @@ def main_nav(user, selected):
             ],
             ['Messages', 
                 '',  
-                    reverse('mycoach:message_view', kwargs={'msg_id' : ''}),
+                    reverse('mycoach:default'),
                         'staff',
                             see_from_listB,
                                 'student_view',
