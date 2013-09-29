@@ -13,6 +13,7 @@ myemailer
 mypump
 myusage
 mylogger
+mytournament
 nts
 mydata4
 mydata6
