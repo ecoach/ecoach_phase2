@@ -1,7 +1,15 @@
 #!/bin/sh
 
 mysql.server start 
-#--pid-file=~/mypid
+# /usr/local/var/mysql/*.pid <<< file location
+# /usr/local/bin/mysql.server --help
+# Usage: mysql.server  {start|stop|restart|reload|force-reload|status}
+
+# this works...
+# ps aux | grep mysql
+# sudo kill -15 ###
+# where ### is the pid of bin/mysqld
+
 
 if [[ $1 == "pick" ]] ; then
     # mts4 is now the picker too!
