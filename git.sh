@@ -20,6 +20,10 @@ mydata6
 mydata7
 mydata8
 mydata9
+mydata16
+mydata17
+mydata18
+mydata19
 )
 
 #export SCRIPT_DIR=$(cd ..; pwd)
