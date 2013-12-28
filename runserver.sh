@@ -7,7 +7,7 @@ mysql.server start
 
 # this works...
 # ps aux | grep mysql
-# sudo kill -15 ###
+# kill -15 ###
 # where ### is the pid of bin/mysqld
 
 
@@ -60,6 +60,22 @@ elif [[ $1 == "mts9" ]] ; then
     source ~/virtualenv/v1/bin/activate
     cd ~/bitbucket/ecoach_webapps
     sudo python manage.py runserver localhost:80 --settings=mydata9.settings
+elif [[ $1 == "mts16" ]] ; then
+    source ~/virtualenv/v1/bin/activate
+    cd ~/bitbucket/ecoach_webapps
+    sudo python manage.py runserver localhost:80 --settings=mydata16.settings
+elif [[ $1 == "mts17" ]] ; then
+    source ~/virtualenv/v1/bin/activate
+    cd ~/bitbucket/ecoach_webapps
+    sudo python manage.py runserver localhost:80 --settings=mydata17.settings
+elif [[ $1 == "mts18" ]] ; then
+    source ~/virtualenv/v1/bin/activate
+    cd ~/bitbucket/ecoach_webapps
+    sudo python manage.py runserver localhost:80 --settings=mydata18.settings
+elif [[ $1 == "mts19" ]] ; then
+    source ~/virtualenv/v1/bin/activate
+    cd ~/bitbucket/ecoach_webapps
+    sudo python manage.py runserver localhost:80 --settings=mydata19.settings
 else
     echo "myrunserver < pick | mts0 | mts1 | ... | mtsX > to pick app"
 fi
