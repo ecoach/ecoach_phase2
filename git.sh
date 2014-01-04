@@ -5,6 +5,7 @@ djangotailoring
 surveytracking
 tailoring2
 myselector
+mycoach
 mytailoring
 mypublisher
 myloader
