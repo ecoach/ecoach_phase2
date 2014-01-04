@@ -4,6 +4,7 @@ projects=(.\/
 djangotailoring
 surveytracking
 tailoring2
+myauth
 myselector
 mycoach
 mytailoring

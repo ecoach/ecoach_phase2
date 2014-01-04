@@ -41,7 +41,7 @@ elif [[ $1 == "mts9" ]] ; then
     cd ~/bitbucket/ecoach_webapps
     sudo python manage.py runserver localhost:80 --settings=mydata9.settings
 elif [[ $1 == "mts14" ]] ; then
-    source ~/virtualenv/v1/bin/activate
+    source ~/virtualenv/v4/bin/activate
     cd ~/bitbucket/ecoach_webapps
     sudo python manage.py runserver localhost:80 --settings=mydata14.settings
 elif [[ $1 == "mts16" ]] ; then
