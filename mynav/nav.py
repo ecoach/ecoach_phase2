@@ -24,7 +24,7 @@ def main_nav(user, selected):
             ],
             ['Messages', 
                 '',  
-                    reverse('mycoach:default'),
+                    reverse('mytailoring:default'),
                         'staff',
                             see_from_listB,
                                 'student_view',

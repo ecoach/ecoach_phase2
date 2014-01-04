@@ -5,7 +5,7 @@ djangotailoring
 surveytracking
 tailoring2
 myselector
-mycoach
+mytailoring
 mypublisher
 myloader
 myexporter
@@ -20,6 +20,7 @@ mydata6
 mydata7
 mydata8
 mydata9
+mydata14
 mydata16
 mydata17
 mydata18
