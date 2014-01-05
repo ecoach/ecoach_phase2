@@ -78,35 +78,30 @@ def tasks_nav(user, selected):
                     reverse('mypublisher:default'),
                         'staff',
                             'publisher',
-
             ],
             ['Data Loader', 
                 '',  
                     reverse('myloader:default'),
                         'staff',
                             'data_loader',
-
             ],
             ['Data Exporter', 
                 '',  
                     reverse('myexporter:default'),
                         'staff',
                             'data_exporter',
-
             ],
             ['Usage', 
                 '',  
                     reverse('myusage:default'),
                         'staff',
                             'usage',
-
             ],
             ['Emailer', 
                 '',  
                     reverse('myemailer:default'),
                         'staff',
                             'emailer',
-
             ]
         ]
     tasks_nav = []
