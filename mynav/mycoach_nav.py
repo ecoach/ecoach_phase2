@@ -25,7 +25,9 @@ def main_nav(user, selected):
             ],
             ['Messages', 
                 '',  
-                    reverse('home'),
+                    #reverse('home'),
+                    reverse('default:default'),
+                    #reverse('default', kwargs={'msg_id':''}),
                     #reverse('myselector:course_select'),
                         'staff',
                             see_from_listA,
@@ -73,18 +75,18 @@ def tasks_nav(user, selected):
             #       'links_to'
             #           'permission_required'
             #               'selected' # looks irrlivant to staff nav...
+            ['Tourneys', 
+                '',  
+                    reverse('tourney:new_bracket'),
+                        'staff',
+                            'tourney',
+            ],
             ['Emailer', 
                 '',  
                     reverse('myemailer:default'),
                         'staff',
                             'emailer',
             ],
-            ['Tourneys', 
-                '',  
-                    reverse('tourney:load_brackets'),
-                        'staff',
-                            'tourney',
-            ]
         ]
     tasks_nav = []
     for nn in all_tasks:

@@ -15,13 +15,8 @@ myemailer
 mypump
 myusage
 mylogger
-mytournament
+mytournament15
 nts
-mydata4
-mydata6
-mydata7
-mydata8
-mydata9
 mydata14
 mydata16
 mydata17
@@ -39,4 +34,12 @@ do
     cd $SCRIPT_DIR\/$i
     git $1
 done
+
+# no longer updateing
+#mydata4
+#mydata6
+#mydata7
+#mydata8
+#mydata9
+#mytournament
 
