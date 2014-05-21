@@ -1,6 +1,7 @@
 #!/bin/sh
 
-mysql.server start 
+#mysql.server start 
+sudo systemctl start mysqld.service
 # /usr/local/var/mysql/*.pid <<< file location
 # /usr/local/bin/mysql.server --help
 # Usage: mysql.server  {start|stop|restart|reload|force-reload|status}
