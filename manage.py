@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-from django.core.management import execute_manager
 """
 import imp
 try:
@@ -10,9 +8,29 @@ except ImportError:
     sys.exit(1)
 """
 
+
+
+"""
+#!/usr/bin/env python
+from django.core.management.base import execute_manager
+
 #import seed project settings
 from mydata4 import settings
 #from mydata6 import settings
 
 if __name__ == "__main__":
     execute_manager(settings)
+
+"""
+
+#django 1.5 version of manage.py
+
+#!/usr/bin/env python
+import os, sys
+
+if __name__ == "__main__":
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mydata14.settings")
+    from django.core.management import execute_from_command_line
+    execute_from_command_line(sys.argv)
+
+
