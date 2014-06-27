@@ -18,8 +18,6 @@ mylogger
 mytournament15
 nts
 mydata14
-mydata13
-mydata12
 mydata16
 mydata17
 mydata18
