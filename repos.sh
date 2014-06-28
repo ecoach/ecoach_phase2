@@ -12,14 +12,14 @@ git clone git@bitbucket.org:jaredtritz/tailoring2.git
 
 # shared apps for ecoach
 git clone git@bitbucket.org:jaredtritz/myauth.git
-git clone git@bitbucket.org:jaredtritz/myselector.git
-git clone git@bitbucket.org:jaredtritz/mycoach.git
-git clone git@bitbucket.org:jaredtritz/mytailoring.git
+
+git clone git@bitbucket.org:jaredtritz/myselector.git # more work here
+
+git clone git@bitbucket.org:jaredtritz/mytailoring.git # may prune backend
 git clone git@bitbucket.org:jaredtritz/mypublisher.git
 git clone git@bitbucket.org:jaredtritz/myloader.git
 git clone git@bitbucket.org:jaredtritz/myexporter.git
 git clone git@bitbucket.org:jaredtritz/myemailer.git
-git clone git@bitbucket.org:jaredtritz/mypump.git
 git clone git@bitbucket.org:jaredtritz/myusage.git
 git clone git@bitbucket.org:jaredtritz/mylogger.git
 git clone git@bitbucket.org:jaredtritz/mytournament.git

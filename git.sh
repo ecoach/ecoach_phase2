@@ -6,21 +6,15 @@ surveytracking
 tailoring2
 myauth
 myselector
-mycoach
 mytailoring
 mypublisher
 myloader
 myexporter
 myemailer
-mypump
 myusage
 mylogger
 mytournament15
 nts
-mydata14
-mydata16
-mydata17
-mydata18
 mydata19
 )
 
@@ -35,6 +29,12 @@ do
     git $1
 done
 
+exit
+
+mydata14
+mydata16
+mydata17
+mydata18
 # no longer updateing
 #mydata4
 #mydata6
