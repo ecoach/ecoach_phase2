@@ -14,7 +14,15 @@ myemailer
 myusage
 mylogger
 mytournament15
+mytournament13
 nts
+mydata6
+mydata7
+mydata8
+mydata9
+mydata16
+mydata17
+mydata18
 mydata19
 )
 
@@ -32,14 +40,4 @@ done
 exit
 
 mydata14
-mydata16
-mydata17
-mydata18
-# no longer updateing
-#mydata4
-#mydata6
-#mydata7
-#mydata8
-#mydata9
-#mytournament
 
