@@ -40,6 +40,8 @@ git clone git@bitbucket.org:jaredtritz/mydata19.git
 # tournament coaches (winter 2014)
 git clone git@bitbucket.org:jaredtritz/mydata14.git
 
+exit
+
 #---------SVN-----------------
 
 # winter 2012
