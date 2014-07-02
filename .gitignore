@@ -1,8 +1,6 @@
 *.swp
 *.pyc
 
-archive01
-
 djangotailoring/
 surveytracking/
 tailoring2/
@@ -10,33 +8,27 @@ mts/
 
 myauth/
 myselector/
-mycoach/
 mytailoring/
 mypublisher/
 myloader/
 myexporter/
 myemailer/
-mypump/
 myusage/
 mylogger/
 nts/
 mytournament13/
 mytournament15/
 
-mydata4/
 mydata6/
 mydata7/
 mydata8/
 mydata9/
-mydata12/
-mydata13/
-mydata14/
 mydata16/
 mydata17/
 mydata18/
 mydata19/
+mydata14/
 
 staticroot/
 
-transfer/
 

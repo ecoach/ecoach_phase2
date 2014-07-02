@@ -5,8 +5,7 @@ set -x
 
 export SCRIPT_DIR="$PWD"
 
-projects=(ecoach_webapps
-djangotailoring
+projects=(djangotailoring
 surveytracking
 tailoring2
 myauth
@@ -36,8 +35,10 @@ for i in "${projects[@]}"
 do
     printf "\n----------%s--------------\n" $i
     git clone git@github.com:ecoach/$i.git
-    rm -rf $i/.git
+    rm -rf $i/.git*
 done
+
+git clone git@github.com:ecoach/ecoach_webapps.git
 
 cp -rp ecoach_webapps/. .
 rm -rf ecoach_webapps
